@@ -8,49 +8,49 @@ describe 'the Friday test :)' do
     expect(n).to eq ['apples', 'avocados']
   end
 
-  fit 'select_elements_starting_with_vowel' do
+  it 'select_elements_starting_with_vowel' do
     n = select_elements_starting_with_vowel ['john', 'david', 'omar', 'fred', 'idris', 'angela']
     expect(n).to eq ['omar', 'idris', 'angela']
   end
 
-  specify 'remove_nils_from_array' do
+  it 'remove_nils_from_array' do
     n = remove_nils_from_array ['a', 'b', nil, nil, false, 'c', nil]
     expect(n).to eq ['a', 'b', false, 'c']
   end
 
-  specify 'remove_nils_and_false_from_array' do
+  it 'remove_nils_and_false_from_array' do
     n = remove_nils_and_false_from_array ['a', 'b', nil, nil, false, 'c', nil]
     expect(n).to eq ['a', 'b', 'c']
   end
 
-  specify 'reverse_every_element_in_array' do
+  it 'reverse_every_element_in_array' do
     n = reverse_every_element_in_array ['dog', 'monkey', 'elephant']
     expect(n).to eq ['god', 'yeknom', 'tnahpele']
   end
 
-  specify 'every_possible_pairing_of_students' do
+  it 'every_possible_pairing_of_students' do
     n = every_possible_pairing_of_students(['Bob', 'Dave', 'Clive']) || []
     sorted = n.map {|pair| pair.sort}.sort_by {|pair| [pair.first, pair.last] }
 
     expect(sorted).to eq [['Bob', 'Clive'], ['Bob', 'Dave'], ['Clive', 'Dave']]
   end
 
-  specify 'all_elements_except_first_3' do
+  it 'all_elements_except_first_3' do
     n = all_elements_except_first_3 [1, 2, 3, 4, 5, 6, 7]
     expect(n).to eq [4, 5, 6, 7]
   end
 
-  specify 'add_element_to_beginning_of_array' do
+  it 'add_element_to_beginning_of_array' do
     n = add_element_to_beginning_of_array [2, 3, 4, 5], 1
     expect(n).to eq [1, 2, 3, 4, 5]
   end
 
-  specify 'array_sort_by_last_letter_of_word' do
+  it 'array_sort_by_last_letter_of_word' do
     n = array_sort_by_last_letter_of_word ['sky', 'puma', 'maker']
     expect(n).to eq ['puma', 'maker', 'sky']
   end
 
-  specify 'get_first_half_of_string' do
+  fit 'get_first_half_of_string' do
     a = get_first_half_of_string 'banana'
     b = get_first_half_of_string 'apple'
 
