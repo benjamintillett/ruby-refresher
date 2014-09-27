@@ -38,3 +38,67 @@ def get_first_half_of_string(string)
 
 	string[0,((string.length)/2.0).ceil]
 end
+
+def make_numbers_negative(number)
+	number >= 0 ? number*-1 : number  
+end
+
+def separate_array_into_even_and_odd_numbers(array)
+	even, odd = [], []
+	array.each do |number|
+		even << number if number%2 == 0 
+		odd << number unless number%2 == 0
+	end
+	[even,odd]
+end
+
+def number_of_elements_that_are_palindromes(array)
+	array.select { |elt| elt == elt.reverse }.count
+end
+
+def shortest_word_in_array(array)
+	array.inject { |shortest,word|  word < shortest ? word : shortest }
+end 
+
+def longest_word_in_array(array)
+	array.max_by(&:length)
+end
+
+def total_of_array(array)
+	array.reduce(&:+)
+end 
+def double_array(array)
+	array*2
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
