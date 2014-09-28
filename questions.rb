@@ -139,8 +139,35 @@ def is_a_3_dot_range?(range)
 	range.exclude_end? 
 end 
 
+def square_root_of(number)
+	number**0.5
+end
 
+def word_count_a_file(file)
+	File.open("./#{file}", "r").read.split(" ").count
+end
 
+def call_method_from_string(string)
+	eval(string)
+end
+
+def is_a_2014_bank_holiday?(date_time)
+	bank_holidays = ["01/01","18/04","21/04","05/05","26/05","25/08","25/12","26/12"]
+	bank_holidays.include?(date_time.strftime("%d/%m"))
+end
+
+def your_birthday_is_on_a_friday_in_the_year(birthday)
+	until birthday.friday?
+		birthday = Time.new(birthday.year + 1, birthday.month, birthday.day) 
+	end
+	birthday.year
+end
+
+def count_words_of_each_length_in_a_file(file)
+	result, array = Hash.new(0), File.open("./#{file}","r").read.gsub!(/[^a-z0-9\s]/i, '').split(" ")
+	array.each { |elt| result[elt.length] +=1 }
+	result
+end
 
 
 
